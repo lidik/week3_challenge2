@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "jest": "^24.8.0"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}

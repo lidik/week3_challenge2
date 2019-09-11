@@ -1,0 +1,84 @@
+
+<html>
+        <head>
+            <title>Banking</title>
+        </head>
+        <body>
+
+                <div id="stanbic" ></div>
+
+        <script>
+        
+        accounts = [];
+class BankAccount { 
+    constructor(name,balance) {
+        // your code here
+        this.name = name;
+        this.balance = balance;
+    }
+
+    getBalance() {
+        // your code her
+        return this.balance;
+    }
+
+    open() {
+        // your code here
+        accounts.push({name:this.name,balance:this.balance});
+    }
+
+    deposit(amount) {
+        // your code here
+        accounts.forEach(element => {
+            if(element.name==this.name){
+                element.balance += amount;
+            }
+        });
+        
+    }
+
+    withdraw(amount) {
+        // your code here
+        accounts.forEach(element => {
+            if(element.name==this.name){
+                element.balance -= amount;
+            }
+        });
+    }
+
+    close(name){
+        accounts.splice( accounts.indexOf(name), 1 );
+    }
+}
+
+var acconut1 = new BankAccount("karungi",5000);
+acconut1.open();
+acconut1.deposit(200000);
+
+var acconut2 = new BankAccount("brian",5000);
+acconut2.open();
+acconut2.deposit(300000);
+acconut2.withdraw(10000);
+var acconut3 = new BankAccount("lidia",5000);
+acconut3.open();
+acconut3.close();
+
+var acconut4 = new BankAccount("roret",5000);
+acconut4.open();
+var acconut5 = new BankAccount("peter",5000);
+acconut5.open();
+
+var htmll = '<table width="100%">';
+for(element=0; element < accounts.length; element++) {
+ document.getElementById("stanbic").innerHTML += "<tr><td>"+accounts[element].name+"</td> <td>"+accounts[element].balance+"</td> </tr>"; 
+ // document.getElementById("stanbic").innerHTML = "testing   dejkjfkjflkfl"; 
+}
+
+htmll += "</table>";
+
+
+        
+                </script>
+                
+              </body>
+        </html>
